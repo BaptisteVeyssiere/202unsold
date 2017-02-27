@@ -5,10 +5,12 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 27 17:24:40 2017 Nathan Scutari
-// Last update Mon Feb 27 17:46:21 2017 Nathan Scutari
+// Last update Mon Feb 27 18:08:55 2017 Baptiste Veyssiere
 //
 
 #include <iostream>
+
+void	calc(const int, const int);
 
 int	write_help(void)
 {
@@ -54,7 +56,7 @@ int	main(int ac, char **av)
     }
   else if (ac == 3)
     {
-      if ((nbr1 = getnbr(av[1], 1) == -1) ||
+      if ((nbr1 = getnbr(av[1], 1)) == -1 ||
 	  (nbr2 = getnbr(av[2], 2)) == -1)
 	return (84);
       calc(nbr1, nbr2);
