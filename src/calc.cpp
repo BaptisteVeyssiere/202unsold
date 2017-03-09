@@ -5,7 +5,7 @@
 // Login   <veyssi_b@epitech.net>
 //
 // Started on  Mon Feb 27 17:25:55 2017 Baptiste Veyssiere
-// Last update Mon Feb 27 19:07:34 2017 Baptiste Veyssiere
+// Last update Thu Mar  9 12:52:11 2017 Baptiste Veyssiere
 //
 
 #include <vector>
@@ -43,9 +43,9 @@ double	getVar(double tab[5], int lim)
     start = 20;
   x = -1;
   for (int i = start; i <= lim; i += 10)
-    sum += (tab[++x] * i * i);
+    sum += (tab[++x] * (double)(i * i));
   e = getEsp(tab, lim);
-  sum -= e * e;
+  sum -= (e * e);
   return (sum);
 }
 
