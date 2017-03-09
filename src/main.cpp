@@ -5,7 +5,7 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 27 17:24:40 2017 Nathan Scutari
-// Last update Mon Feb 27 18:08:55 2017 Baptiste Veyssiere
+// Last update Thu Mar  9 13:46:42 2017 Nathan Scutari
 //
 
 #include <iostream>
@@ -30,15 +30,19 @@ int	write_err(std::string error)
 int	getnbr(std::string arg, int arg_nbr)
 {
   int	i;
+  int	nbr;
 
   i = -1;
   while (arg[++i])
     if (arg[i] < '0' || arg[i] > '9')
       {
-	std::cerr << "Error in arg:" << arg_nbr << "positive integer expected" << std::endl;
+	std::cerr << "Error in arg: " << arg_nbr << "positive integer greater than 50 expected" << std::endl;
 	return (-1);
       }
-  return (std::stoi(arg));
+  nbr = std::stoi(arg);
+  if (nbr <= 50)
+    std::cerr << "Error in arg: " << arg_nbr << "expected integer greater than 50" << std::endl;
+  return (nbr);
 }
 
 int	main(int ac, char **av)
