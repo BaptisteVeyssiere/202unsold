@@ -5,12 +5,13 @@
 // Login   <veyssi_b@epitech.net>
 //
 // Started on  Mon Feb 27 17:25:55 2017 Baptiste Veyssiere
-// Last update Thu Mar  9 12:56:38 2017 Baptiste Veyssiere
+// Last update Thu Mar  9 13:00:43 2017 Baptiste Veyssiere
 //
 
 #include <vector>
 #include <iostream>
 #include <iomanip>
+#include <math.h>
 
 double	getEsp(double tab[5], int lim)
 {
@@ -43,7 +44,7 @@ double	getVar(double tab[5], int lim)
     start = 20;
   x = -1;
   for (int i = start; i <= lim; i += 10)
-    sum += (tab[++x] * (double)((double)i * (double)i));
+    sum += (tab[++x] * pow(i, 2));
   e = getEsp(tab, lim);
   sum -= (e * e);
   return (sum);
