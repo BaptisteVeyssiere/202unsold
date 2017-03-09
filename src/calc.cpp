@@ -5,7 +5,7 @@
 // Login   <veyssi_b@epitech.net>
 //
 // Started on  Mon Feb 27 17:25:55 2017 Baptiste Veyssiere
-// Last update Thu Mar  9 12:52:11 2017 Baptiste Veyssiere
+// Last update Thu Mar  9 12:55:36 2017 Baptiste Veyssiere
 //
 
 #include <vector>
@@ -25,7 +25,7 @@ double	getEsp(double tab[5], int lim)
     start = 20;
   x = -1;
   for (int i = start; i <= lim; i += 10)
-    sum += (tab[++x] * i);
+    sum += (tab[++x] * (double)i);
   return (sum);
 }
 
@@ -43,7 +43,7 @@ double	getVar(double tab[5], int lim)
     start = 20;
   x = -1;
   for (int i = start; i <= lim; i += 10)
-    sum += (tab[++x] * (double)(i * i));
+    sum += (tab[++x] * (double)((double)i * (double)i));
   e = getEsp(tab, lim);
   sum -= (e * e);
   return (sum);
@@ -124,7 +124,7 @@ void	calc(const int a, const int b)
       for (int j = 10; j < i && j <= 50; j += 10)
 	{
 	  y = i - j;
-	  p[i / 10 - 2] += tab[y / 10 - 1][j / 10 - 1];
+	  p[i / 10 - 2] += tab[(double)y / 10 - 1][j / 10 - 1];
 	}
       std::cout << p[i / 10 - 2] << " ";
     }
