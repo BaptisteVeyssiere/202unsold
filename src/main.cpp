@@ -5,7 +5,7 @@
 // Login   <scutar_n@epitech.net>
 //
 // Started on  Mon Feb 27 17:24:40 2017 Nathan Scutari
-// Last update Thu Mar  9 13:46:42 2017 Nathan Scutari
+// Last update Thu Mar  9 13:54:11 2017 Nathan Scutari
 //
 
 #include <iostream>
@@ -36,12 +36,15 @@ int	getnbr(std::string arg, int arg_nbr)
   while (arg[++i])
     if (arg[i] < '0' || arg[i] > '9')
       {
-	std::cerr << "Error in arg: " << arg_nbr << "positive integer greater than 50 expected" << std::endl;
+	std::cerr << "Error in arg: " << arg_nbr << " positive integer greater than 50 expected" << std::endl;
 	return (-1);
       }
   nbr = std::stoi(arg);
   if (nbr <= 50)
-    std::cerr << "Error in arg: " << arg_nbr << "expected integer greater than 50" << std::endl;
+    {
+      std::cerr << "Error in arg: " << arg_nbr << " expected integer greater than 50" << std::endl;
+      return (-1);
+    }
   return (nbr);
 }
 
